@@ -23,6 +23,7 @@
       </feature>
     </config-file>
 
+    <header-file src="src/ios/CordovaGuidedAccess-Bridging-Header.h" />
     <source-file src="src/ios/CordovaGuidedAccess.swift" />
 
   </platform>

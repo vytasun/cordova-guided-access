@@ -1,0 +1,26 @@
+{
+  "name": "cordova-guided-access",
+  "version": "0.0.1",
+  "description": "Cordova Guided Access",
+  "cordova": {
+    "id": "cordova-guided-access",
+    "platforms": [
+      "ios",
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vytasun/cordova-guided-access.git"
+  },
+  "author": "vytasun",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vytasun/cordova-guided-access"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ]
+}
