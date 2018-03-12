@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-guided-access" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>Cordova Guided Access</name>
+  <author>Vytautas Undraitis</author>
+  <description>
+    Cordova plugin to allow Cordova / Ionic application use IOS 'Single App Mode'.
+    Plugin website: https://github.com/vytasun/cordova-guided-access
+    This plugin only works in iOS if the device is supervised and Guided Access enabled.
+  </description>
+  <license>MIT</license>
+  <keywords>cordova, guided, access, ios, single app mode</keywords>
+
+  <js-module name="CordovaGuidedAccess" src="www/CordovaGuidedAccess.js">
+    <clobbers target="CordovaGuidedAccess" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+
+    <config-file parent="/*" target="config.xml">
+      <feature name="CordovaGuidedAccess">
+        <param name="ios-package" value="CordovaGuidedAccess" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/ios/CordovaGuidedAccess.swift" />
+
+  </platform>
+</plugin>
