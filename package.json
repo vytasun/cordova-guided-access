@@ -1,26 +1,30 @@
 {
   "name": "cordova-guided-access",
   "version": "0.0.1",
-  "description": "Cordova Guided Access",
+  "description": "Cordova plugin to allow Cordova / Ionic application use IOS 'Single App Mode'. Plugin website: https://github.com/vytasun/cordova-guided-access This plugin only works in iOS if the device is supervised and Guided Access enabled.",
   "cordova": {
     "id": "cordova-guided-access",
     "platforms": [
-      "ios",
+      "ios"
     ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vytasun/cordova-guided-access.git"
   },
-  "author": "vytasun",
-  "license": "Apache-2.0",
+  "keywords": [
+    "cordova",
+    "guided",
+    "access",
+    "ios",
+    "single app mode",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Vytautas Undraitis",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vytasun/cordova-guided-access"
+    "url": "https://github.com/vytasun/cordova-guided-access/issues"
   },
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=5.0.0"
-    }
-  ]
+  "homepage": "https://github.com/vytasun/cordova-guided-access#readme"
 }
