@@ -1,5 +1,11 @@
 var exec = require('cordova/exec');
 
-exports.guidedAccessMode = function (arg0, success, error) {
-    exec(success, error, 'CordovaGuidedAccess', 'guidedAccessMode', [arg0]);
+var PLUGIN_NAME = 'CordovaGuidedAccess';
+
+var CordovaGuidedAccess = {
+  guidedAccessMode: function(action, cb) {
+    exec(cb, null, PLUGIN_NAME, 'guidedAccessMode', [action]);
+  },
 };
+
+module.exports = CordovaGuidedAccess;
