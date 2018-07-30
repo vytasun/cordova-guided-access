@@ -3,17 +3,29 @@
 
 @implementation CordovaGuidedAccess
 
-- (void)guidedAccessMode:(CDVInvokedUrlCommand*)command
+- (void)setMode:(CDVInvokedUrlCommand*)command
 {
-    CDVPluginResult* pluginResult = nil;
-    NSString* echo = [command.arguments objectAtIndex:0];
+    __block CDVPluginResult* pluginResult = nil;
+    //[pluginResult setKeepCallbackAsBool:true];
 
-    if (echo != nil && [echo length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    }
+    NSNumber* action = [command.arguments objectAtIndex:0];
 
+    BOOL boolAction = [action boolValue] == YES ? YES : NO;
+    //NSLog(@"test");
+    UIAccessibilityRequestGuidedAccessSession(boolAction, ^(BOOL didSucceed) {
+        if (didSucceed) {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:didSucceed];
+        }
+        else {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsBool:didSucceed];
+        }
+    });
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)getStatus:(CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsBool:UIAccessibilityIsGuidedAccessEnabled()];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 

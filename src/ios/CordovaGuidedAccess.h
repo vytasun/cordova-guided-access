@@ -2,6 +2,7 @@
 
 @interface CordovaGuidedAccess : CDVPlugin
 
-- (void)guidedAccessMode:(CDVInvokedUrlCommand*)command;
+- (void)setMode:(CDVInvokedUrlCommand*)command;
+- (void)getStatus:(CDVInvokedUrlCommand*)command;
 
 @end
